@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<VarLinks>
+	<OwnerA Name="InputDst" Prefix="TIPC^Cobot_Control^Cobot_Control Instance" Type="1">
+		<OwnerB Name="TIID^Device 1 (TC3 EIP Scanner)^Box 1 (FANUC Robot R30iB)">
+			<Link VarA="Variables.arrFANUC_IN_10[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[31]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_10[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[32]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_10[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[33]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_11[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[34]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_11[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[35]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_11[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[36]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_12[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[37]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_12[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[38]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_12[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[39]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_13[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[40]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_13[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[41]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_13[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[42]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_1[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[3]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_1[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[4]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_1[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[5]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_2[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[6]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_2[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[7]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_2[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[8]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_3[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[9]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_3[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[10]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_3[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[11]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_4[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[12]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_4[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[13]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_4[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[14]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_5[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[15]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_5[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[16]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_5[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[17]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_6[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[18]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_6[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[19]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_6[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[20]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_7[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[22]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_7[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[23]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_7[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[24]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_8[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[25]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_8[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[26]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_8[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[27]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_9[0]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[28]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_9[1]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[29]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_IN_9[2]" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[30]" Size="8"/>
+			<Link VarA="Variables.nFANUC_STATE" GrpA="PlcTask Inputs" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[0]" Size="8"/>
+		</OwnerB>
+	</OwnerA>
+	<OwnerA Name="OutputSrc" Prefix="TIPC^Cobot_Control^Cobot_Control Instance" Type="2">
+		<OwnerB Name="TIID^Device 1 (TC3 EIP Scanner)^Box 1 (FANUC Robot R30iB)">
+			<Link VarA="Variables.arrFANUC_OUT_1[0]" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Outputs^noname0_arrBYTE[3]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_OUT_1[1]" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Outputs^noname0_arrBYTE[4]" Size="8"/>
+			<Link VarA="Variables.arrFANUC_OUT_1[2]" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Outputs^noname0_arrBYTE[5]" Size="8"/>
+			<Link VarA="Variables.nFANUC_REMOTE_START" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Connection 1 (Input/Output)^Outputs^noname0_arrBYTE[0]" Size="8"/>
+		</OwnerB>
+	</OwnerA>
+</VarLinks>

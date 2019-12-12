@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="Communication" Id="{c27e328a-b4d0-4cb8-8439-db4d90a4b445}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	////////////////////////////// CISS Sensor ///////////////////////////////
+	
+	///////////////////	 Raw CISS Sensor Information  ////////////////////////
+	
+	arrACCData AT %I*      			: ARRAY [1..6] OF INT;
+	arrGYRData AT %I*   			: ARRAY [1..6] OF INT;	
+	arrMAGData AT %I*     			: ARRAY [1..6] OF INT;		
+	arrTEMPData AT %I*     			: INT;
+	arrHUMData AT %I*    			: INT;
+	arrPRESData AT %I*     			: INT;
+	arrLIGHTData AT %I*       		: INT;
+	arrNOISEData AT %I*        		: INT;
+
+		
+	/////////////////////////////////////////////////////////////////////////	
+
+
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

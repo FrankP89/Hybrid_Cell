@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <POU Name="MAIN" Id="{acd9ff64-481e-460e-9be1-ced6f2e40b6e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR		
+	bStartProcess 	: BOOL := FALSE;
+	timer1			: TON;
+	timer2			: TON;
+	timer3			: TON;
+	bStart1			: BOOL := FALSE;
+	bStart2: BOOL;
+	bStart3: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Beginning of painting process //
+
+// If process is initiated from UI
+IF (bStartProcess) THEN
+	bStart1 := TRUE;
+	timer1(IN := bStart1, PT:= T#5S);
+		
+	IF timer1.Q THEN		
+		Variables.nFANUC_REMOTE_START := 160; // Initializing variables #6 (Starts)
+		bStart2 := TRUE;
+	END_IF
+	
+	COMM_FANUC.arrf_Internal_FANUC_Output_1 := 63; // Tell FANUC to move and leave robot in initial position	
+	
+	timer2(IN := bStart2, PT:= T#1S);
+		
+	IF timer2.Q THEN		
+		Variables.nFANUC_REMOTE_START := 128; // Start works in a rising edge
+	END_IF
+	
+	
+	IF COMM_FANUC.arrf_Internal_FANUC_Input_1 = 254 THEN // IF FANUC tells us that position has been reached, we proceed to move UR
+		Variables.nURProgAction := 63; // Set Program in UR - Move Robot		
+		// Wait for UR to finish
+		
+		IF Variables.nURProgState = 99 THEN // If UR finishes
+			COMM_FANUC.arrf_Internal_FANUC_Output_1 := 77; // Inform FANUC that it is safe to move home
+			bStart3 := TRUE;			
+			timer3(IN := bStart3, PT:= T#3S);			
+			IF timer3.Q THEN
+				
+				bStartProcess := FALSE; // Terminate process
+			END_IF
+								
+		END_IF		
+	END_IF
+
+ELSE // IF not initiated
+	// While no signal for starting demo is coming, set variables of robots as 0
+	//timer1.IN := FALSE;
+	//Variables.nFANUC_REMOTE_START := 0;
+	COMM_FANUC.arrf_Internal_FANUC_Output_1 := 0;
+	Variables.nURProgAction := 0;
+	Variables.nFANUC_REMOTE_START := 128; // Initializing variables #8 (Enable function)
+	bStart1 := FALSE;
+	bStart2 := FALSE;
+	bStart3 := FALSE;
+	timer1(IN:=bStart1);
+	timer2(IN:=bStart2);
+	timer3(IN:=bStart3);
+END_IF
+
+
+Data_Publisher();
+COMM_UR10();
+COMM_FANUC();
+Analog_Speed();
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="161" Count="0" />
+      <LineId Id="164" Count="1" />
+      <LineId Id="219" Count="0" />
+      <LineId Id="320" Count="0" />
+      <LineId Id="270" Count="0" />
+      <LineId Id="296" Count="0" />
+      <LineId Id="298" Count="1" />
+      <LineId Id="330" Count="0" />
+      <LineId Id="300" Count="0" />
+      <LineId Id="282" Count="0" />
+      <LineId Id="286" Count="0" />
+      <LineId Id="316" Count="0" />
+      <LineId Id="303" Count="1" />
+      <LineId Id="307" Count="0" />
+      <LineId Id="309" Count="0" />
+      <LineId Id="306" Count="0" />
+      <LineId Id="290" Count="0" />
+      <LineId Id="288" Count="0" />
+      <LineId Id="235" Count="0" />
+      <LineId Id="244" Count="1" />
+      <LineId Id="251" Count="0" />
+      <LineId Id="239" Count="0" />
+      <LineId Id="241" Count="0" />
+      <LineId Id="310" Count="0" />
+      <LineId Id="317" Count="0" />
+      <LineId Id="313" Count="2" />
+      <LineId Id="312" Count="0" />
+      <LineId Id="254" Count="0" />
+      <LineId Id="242" Count="0" />
+      <LineId Id="237" Count="0" />
+      <LineId Id="247" Count="0" />
+      <LineId Id="233" Count="0" />
+      <LineId Id="250" Count="0" />
+      <LineId Id="248" Count="0" />
+      <LineId Id="267" Count="0" />
+      <LineId Id="260" Count="0" />
+      <LineId Id="249" Count="0" />
+      <LineId Id="295" Count="0" />
+      <LineId Id="321" Count="0" />
+      <LineId Id="328" Count="1" />
+      <LineId Id="322" Count="0" />
+      <LineId Id="324" Count="1" />
+      <LineId Id="222" Count="0" />
+      <LineId Id="246" Count="0" />
+      <LineId Id="217" Count="1" />
+      <LineId Id="203" Count="0" />
+      <LineId Id="227" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="209" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

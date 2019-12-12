@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <GVL Name="E4000_IO" Id="{a8efa5b9-81cd-48cb-934c-fa6533cb5bd1}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	// Variables for ECCMP88P (1)
+	// Digital OUTPUTS
+	bSTART_OUT0 AT %Q*: BOOL := FALSE;
+	bDIR_IN_OUT1 AT %Q*: BOOL;		
+	bUD_IN_OUT2 AT %Q*: BOOL;
+	bCNT_IN_OUT3 AT %Q*: BOOL;
+	b500_OUT4 AT %Q*: BOOL;		
+	bRESET_OUT5 AT %Q*: BOOL;
+	bSEL0_OUT6 AT %Q*: BOOL;
+	bSEL1_OUT7 AT %Q*: BOOL;		
+
+	// Digital INPUTS
+	bRUN_IN0 AT %I*: BOOL;
+	bDIR_OUT_IN1 AT %I*: BOOL;
+	bCOIN_IN2 AT %I*: BOOL;
+	bPULSE_IN3 AT %I*: BOOL;
+	bWARNING_IN4 AT %I*: BOOL;
+	bERR_IN5 AT %I*: BOOL;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Variables for ECCMP88P (2)
+	// Digital OUTPUTS	
+	bEMG_INB_OUT0 AT %Q*: BOOL ;
+
+	// Digital INPUTS
+	bMT_CNB_IN0 AT %I*: BOOL;
+	bSAFE1B_IN1 AT %I*: BOOL;
+	bSAFE2B_IN2 AT %I*: BOOL;
+	bAUTO_IN3 AT %I*: BOOL;
+	bPWON_IN4 AT %I*: BOOL;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Variables for ECCEA04 
+	// Analog OUTPUT
+	nVR AT %Q*: DINT ;
+	
+	
+	// Variables for ECCEA40 
+	// Analog INPUTS
+	nMOTOR_I_CH0 AT %I*: INT;
+	nLOAD_CH1 AT %I*: INT;
+	nSPEED_V_CH2 AT %I*: INT;
+	
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Variables to help control
+	
+	bSetSpeed : BOOL := FALSE;
+	
+	
+	
+	
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

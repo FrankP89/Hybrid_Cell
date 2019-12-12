@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="Display" Id="{e954d15c-2604-447e-a00d-7a4ab5d19481}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Display
+VAR
+	iDisplay_Value : UINT := 0;
+	status_display : WSTRING;
+	
+	
+	iDisplay_Component: INT;
+	side_display	: WSTRING;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Power Off Display
+IF NOT Variables.bStartOperation THEN
+	iDisplay_Value :=0;
+END_IF;
+
+//Power On Display
+IF Variables.bStartOperation THEN
+	iDisplay_Value :=1;
+END_IF;
+
+//Emergency Stop Display
+IF Variables.bStopOperations THEN
+	iDisplay_Value :=2;
+END_IF;
+
+//Painting Position Display
+IF Variables.bIsOmronInPos THEN
+	iDisplay_Value :=3;
+END_IF;
+
+//Painting Process Display
+IF Variables.bPaint THEN
+	iDisplay_Value :=4;
+END_IF;
+
+//Robotic Arm Movement Display
+IF Variables.bIsRobotInPos THEN
+	iDisplay_Value :=5;
+END_IF;
+
+//Process Completion Display
+IF Half_Rotation.bProcess THEN
+	iDisplay_Value :=6;
+END_IF;
+
+//Robotic Arm Movement Display
+IF Half_Rotation.bRotation_Trig THEN
+	iDisplay_Value :=7;
+END_IF;
+
+//Display Value to Display String (Process Type)
+CASE iDisplay_Value OF
+	
+	0: status_display := "IDLE...";
+	1: status_display := "POWER ON";
+	2: status_display := "EMERGENCY STOP";
+	3: status_display := "PAINT PROCESS READY";
+	4: status_display := "PAINTING IN PROGRESS";
+	5: status_display := "SHIFTING OF ROBOTIC ARM";
+	6: status_display := "PAINT COMPLETED";
+	7: status_display := "ROTATING SIDE";
+	
+END_CASE
+
+//Display Value to Display String (Component Surface)
+IF Half_Rotation.bFlip_Side THEN
+	
+	iDisplay_Component := 1;
+	
+	ELSE
+		iDisplay_Component :=0;
+END_IF
+
+
+//Display for Component Surface Side
+CASE iDisplay_Component OF
+	
+	0: side_display := "PRESSURE SIDE";
+	1: side_display := "SUCTION SIDE";
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="Display">
+      <LineId Id="3" Count="69" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

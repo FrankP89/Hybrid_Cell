@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="Variables" Id="{f32de565-7892-4182-834a-5f4370368e3d}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	///////////////////////////////////////// ROBOT CONTROLLER /////////////////////////////////////////
+
+	(* Robot IO Signals *)
+
+		(* Robot Physical Signals *)
+	
+			(* Robot Physical Digital Inputs *)	
+		
+				{attribute 'OPC.UA.DA' := '1'}
+				bRobotReadyForNext AT %I*: BOOL := FALSE;
+			
+			(* End of Robot Physical Digital Inputs *)	
+			
+			(* Robot Physical Digital Outputs *)	
+			
+				{attribute 'OPC.UA.DA' := '1'}
+				bSetRobotNextAction AT %Q* : BOOL := FALSE;
+			
+			(* End of Robot Physical Digital Outputs *)		
+					
+		(* End of Robot Physical Signals *)
+
+		(* Robot Virtual Signals *)
+		
+			(* Robot Virtual Digital Inputs *)	
+				
+				{attribute 'OPC.UA.DA' := '1'}
+				bIsRobotInPos AT %I* : BOOL; 
+				
+			(* End of Robot Virtual Digital Inputs *)
+		
+		(* End of Robot Virtual Signals *)
+	
+	(* End of Robot IO Signals *)
+					
+	///////////////////////////////////////// OMRON CONTROLLER /////////////////////////////////////////
+	
+	(* OMRON motor controller *)
+		
+		(* OMRON Physical Signals *)
+	
+			(* OMRON Digital Inputs *)
+			
+				{attribute 'OPC.UA.DA' := '1'}
+				bIsOmronHome AT %I* : BOOL; (* Variable to start/stop signal reading *)
+				
+				{attribute 'OPC.UA.DA' := '1'}
+				bIs_In_Pos AT %I* : BOOL; (* Variable to start/stop signal reading *)
+				
+				{attribute 'OPC.UA.DA' := '1'}
+				bReadyForNext AT %I* : BOOL; (* Variable to start/stop signal reading *)
+				
+				{attribute 'OPC.UA.DA' := '1'}
+				bIsMotorMoving AT %I* : BOOL; (* Variable to start/stop signal reading *)
+			
+			(* End of OMRON Digital Inputs *)
+			
+			(* OMRON Digital Outputs *)
+			
+				{attribute 'OPC.UA.DA' := '1'}
+				bStartOperation AT %Q* : BOOL;	
+						
+				{attribute 'OPC.UA.DA' := '1'}
+				bM0 AT %Q* : BOOL;	
+				
+				{attribute 'OPC.UA.DA' := '1'}
+				bM1 AT %Q* : BOOL;	
+			
+				{attribute 'OPC.UA.DA' := '1'}
+				bM2 AT %Q* : BOOL;		
+				
+				{attribute 'OPC.UA.DA' := '1'}
+				bStopOperations AT %Q* : BOOL;	
+				
+				{attribute 'OPC.UA.DA' := '1'}
+				bGoHomeOmron AT %Q* : BOOL;			
+			
+			(* End of OMRON Digital Outputs *)
+			
+		(* End of OMRON Physical Signals *)
+	
+		(* OMRON Virtual Signals *)
+		
+			(* OMRON Virtual Digital Inputs *)	
+				
+					{attribute 'OPC.UA.DA' := '1'}
+					bIsOmronInPos AT %I* : BOOL; 				 
+				
+			(* End of OMRON Virtual Digital Inputs *)
+		
+		(* End of OMRON Virtual Signals *)
+		
+	(* Display Variables *)	
+	
+		{attribute 'OPC.UA.DA' := '1'}
+		bPaint AT %Q* : BOOL;	
+			
+		{attribute 'OPC.UA.DA' := '1'}
+		bSwitchON AT %I* : BOOL := FALSE;	
+		
+	(* End of Display Variables *)
+	
+	
+	//////////////////////////////////////// Digitalization Workscope /////////////////////////////////////////
+
+	(* Allow collection and visualization of data *)
+	
+		{attribute 'OPC.UA.DA' := '1'}
+		bStartStop AT %I* : BOOL; (* Variable to start/stop signal reading *)
+	
+	
+	(* Robot #1 Variables *)
+	
+	(* Robot Target *)
+	(* {attribute 'OPC.UA.DA.Access' := '1'} *)
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fRTx : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTy : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTz : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTq1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTq2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTq3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTq4 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTcfg1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTcfg2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTcfg3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRTcfg4 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRText1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRText2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRText3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRText4 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRText5 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fRText6 : LREAL;
+		
+	
+	
+	(* Axes *)
+	(* {attribute 'OPC.UA.DA.Access' := '1'} *)
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fJT1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJT2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJT3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJT4 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJT5 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJT6 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fJText1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJText2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJText3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJText4 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJText5 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fJText6 : LREAL;
+	
+	(* Robot Status *)
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	sRSstatus : STRING;
+	
+	
+	(* Work Object Info *)
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	bWDrobhold : BOOL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	bWDufprog : BOOL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	sWDufmec : STRING;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fWDux : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDuy : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDuz : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDuq1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDuq2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDuq3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDuq4 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fWDox : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDoy : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDoz : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDoq1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDoq2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDoq3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fWDoq4 : LREAL;
+	
+	
+	(* Tool Info *)
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	bTDrobhold : BOOL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDx : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDy : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fTDz : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDq1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDq2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDq3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDq4 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDmass : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDcogx : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fTDcogy : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDcogz : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDcogq1 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDcogq2 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDcogq3 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDcogq4 : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDix : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDiy : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	fTDiz : LREAL;
+	
+	
+	(* Robot #1 Environment Variables *)
+	
+	
+	(* Sensors *)
+		
+	{attribute 'OPC.UA.DA' := '1'}	
+	fAccX : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fAccY : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fAccZ : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fGyrX : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fGyrY : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fGyrZ : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fMagX : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fMagY : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fMagZ : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fTemp : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fHum : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fPres : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fLight : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fNoise : LREAL;
+	
+	{attribute 'OPC.UA.DA' := '1'}	
+	fPPM : LREAL;
+	
+	
+		
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

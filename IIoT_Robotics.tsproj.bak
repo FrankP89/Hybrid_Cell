@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.29">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..6] OF INT</Name>
+			<BitSize>96</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000" TcBaseType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_MEMORY_NONE]]>
+				</Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]>
+				</Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]>
+				</Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]>
+				</Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]>
+				</Text>
+				<Enum>16</Enum>
+			</EnumInfo>
+			<Hides>
+				<Hide GUID="{F1A82E04-2D76-4E5D-BB15-437337214D25}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{D7D16A25-71D5-48E0-882D-56AB4D826BC2}" Namespace="AX5000" PersistentType="true">ST_AX5000_P_0275</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>ActiveFeedbackAndMemory</Name>
+				<Type GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000">E_AX5000_P_0275_ActiveFeedbackAndMemory</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InitializationErrorBehavior</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{0D1A14D3-018F-4F48-88A7-90B490A317B5}"/>
+				<Hide GUID="{43B3CFF1-FA94-4CC1-8B03-C73EF940373B}"/>
+				<Hide GUID="{81B09CD0-943C-4070-AA5B-0A6818251CEB}"/>
+				<Hide GUID="{B6598B95-DC2C-454C-9B12-DE628B32D897}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1001">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000120b0000120b00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1002">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff</ImageData>
+	</ImageDatas>
+	<Project ProjectGUID="{F70AAD93-23B4-4CCA-B994-AD97F001A4C1}" Target64Bit="true" ShowHideConfigurations="#x306">
+		<System>
+			<Settings MaxCpus="2">
+				<Cpu/>
+				<Cpu CpuId="1"/>
+			</Settings>
+			<Licenses>
+				<Target>
+					<ManualSelect>{BDCC0070-42D5-49AE-ABF1-1D4434813D60}</ManualSelect>
+					<ManualSelect>{92583661-35AE-45CE-BD4F-C35BFE16F07E}</ManualSelect>
+					<ManualSelect>{27326EE5-AB30-4084-B15B-8CCA96CCBF0B}</ManualSelect>
+					<ManualSelect>{7AFD0713-1333-4A3B-938C-7B9BD0418C8D}</ManualSelect>
+					<ManualSelect>{FDE02854-39A7-440C-9EAE-C234A16A3CED}</ManualSelect>
+					<ManualSelect>{0ABFD2B0-EAE1-4DC7-AABE-03093B0786B7}</ManualSelect>
+					<ManualSelect>{ADDFAE21-8CFE-4AF3-9F46-29C36F985936}</ManualSelect>
+					<ManualSelect>{D58728E0-7762-4145-8A93-80D55E0453A6}</ManualSelect>
+				</Target>
+			</Licenses>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" Affinity="#x00000001">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{F540E5F9-6397-4D9E-9D2F-6122F6862AEA}" Name="Control_Monitor" PrjFilePath="Control_Monitor\Control_Monitor.plcproj" TmcFilePath="Control_Monitor\Control_Monitor.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Control_Monitor\Control_Monitor.tmc">
+					<Name>Control_Monitor Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>SELECT.iState</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bRobotReadyForNext</Name>
+							<Comment>
+								<![CDATA[////////////////////////////////////// ROBOT CONTROLLER /////////////////////////////////////////]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bIsRobotInPos</Name>
+							<Comment>
+								<![CDATA[ End of Robot Physical Digital Outputs 
+ End of Robot Physical Signals 
+ Robot Virtual Signals 
+ Robot Virtual Digital Inputs ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bIsOmronHome</Name>
+							<Comment>
+								<![CDATA[////////////////////////////////////// OMRON CONTROLLER /////////////////////////////////////////]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bIs_In_Pos</Name>
+							<Comment>
+								<![CDATA[ Variable to start/stop signal reading ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bReadyForNext</Name>
+							<Comment>
+								<![CDATA[ Variable to start/stop signal reading ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bIsMotorMoving</Name>
+							<Comment>
+								<![CDATA[ Variable to start/stop signal reading ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bIsOmronInPos</Name>
+							<Comment>
+								<![CDATA[ End of OMRON Digital Outputs 
+ End of OMRON Physical Signals 
+ OMRON Virtual Signals 
+ OMRON Virtual Digital Inputs ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bSwitchON</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bStartStop</Name>
+							<Comment>
+								<![CDATA[///////////////////////////////////// Digitalization Workscope /////////////////////////////////////////]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Communication.arrTEMPData</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Communication.arrHUMData</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Communication.arrACCData</Name>
+							<Comment>
+								<![CDATA[/////////////////////////// CISS Sensor ///////////////////////////////
+////////////////	 Raw CISS Sensor Information  ////////////////////////]]>
+							</Comment>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Communication.arrGYRData</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Communication.arrMAGData</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Communication.arrPRESData</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Communication.arrLIGHTData</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Communication.arrNOISEData</Name>
+							<Type>INT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>Variables.bSetRobotNextAction</Name>
+							<Comment>
+								<![CDATA[ End of Robot Physical Digital Inputs 
+ Robot Physical Digital Outputs ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bStartOperation</Name>
+							<Comment>
+								<![CDATA[ End of OMRON Digital Inputs 
+ OMRON Digital Outputs ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bM0</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bM1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bM2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bStopOperations</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bGoHomeOmron</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bPaint</Name>
+							<Comment>
+								<![CDATA[ End of OMRON Virtual Digital Inputs 
+ End of OMRON Virtual Signals 
+ Display Variables ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<UnrestoredVarLinks ImportTime="2019-07-17T18:25:51">
+						<OwnerA Name="OutputSrc" Prefix="TIPC^Control_Monitor^Control_Monitor Instance" Type="2">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Term 1 (EK1100)^Term 3 (EL2809)">
+								<Link VarA="Variables.bDummy1" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="Variables.bDummy2" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="Variables.bDummy3" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Output" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2019-07-18T16:39:19">
+						<OwnerA Name="OutputSrc" Prefix="TIPC^Control_Monitor^Control_Monitor Instance" Type="2">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Term 1 (EK1100)^Term 3 (EL2809)">
+								<Link VarA="Blade_Control.bSetRobotNextAction" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 9^Output" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Io>
+			<Device DevType="111" DevFlags="#x0003" AmsPort="28674" AmsNetId="172.18.136.16.3.1" RemoteName="Device 2 (EtherCAT)" Id="2">
+				<Name>Device 2 (EtherCAT)</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>Ethernet 3 (Intel(R) I210 Gigabit Network Connectio</DeviceDesc>
+						<DeviceName>\DEVICE\{496AB491-B477-4449-8449-1F69E98E2A67}</DeviceName>
+						<DeviceData>000105315dd0</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Image Id="1" AddrType="9" ImageType="3">
+					<Name>Image</Name>
+				</Image>
+				<Box BoxType="9099" Id="1">
+					<Name>Term 1 (EK1100)</Name>
+					<ImageId>1000</ImageId>
+					<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044c2c52" RevisionNo="#x00120000" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1100 EtherCAT Coupler (2A E-Bus)" Desc="EK1100" PortABoxInfo="#x00ffffff"/>
+					<Box BoxType="9099" Id="2">
+						<Name>Term 2 (EL1809)</Name>
+						<ImageId>7</ImageId>
+						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07113052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1809 16Ch. Dig. Input 24V, 3ms" Desc="EL1809" PortABoxInfo="#x01000001">
+							<SyncMan>001002000000010004000000000000000200001000010000</SyncMan>
+							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6000" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6010" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6020" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6030" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6040" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6050" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 7" Index="#x1a06" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6060" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6070" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 9" Index="#x1a08" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6080" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 10" Index="#x1a09" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6090" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 11" Index="#x1a0a" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60a0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 12" Index="#x1a0b" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60b0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 13" Index="#x1a0c" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60c0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 14" Index="#x1a0d" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60d0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 15" Index="#x1a0e" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60e0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 16" Index="#x1a0f" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60f0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+						</EtherCAT>
+					</Box>
+					<Box BoxType="9099" Id="3">
+						<Name>Term 3 (EL2809)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x0af93052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2809 16Ch. Dig. Output 24V, 0.5A" Desc="EL2809" PortABoxInfo="#x01000002">
+							<SyncMan>000f01004400010003000000000000000100000f44090000</SyncMan>
+							<SyncMan>010f01004400010003000000000000000100010f44090000</SyncMan>
+							<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
+							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7000" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7010" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 3" Index="#x1602" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7020" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 4" Index="#x1603" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7030" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 5" Index="#x1604" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7040" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 6" Index="#x1605" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7050" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 7" Index="#x1606" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7060" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 8" Index="#x1607" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7070" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 9" Index="#x1608" InOut="1" Flags="#x0011" SyncMan="1">
+								<Entry Name="Output" Index="#x7080" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 10" Index="#x1609" InOut="1" Flags="#x0011" SyncMan="1">
+								<Entry Name="Output" Index="#x7090" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 11" Index="#x160a" InOut="1" Flags="#x0011" SyncMan="1">
+								<Entry Name="Output" Index="#x70a0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 12" Index="#x160b" InOut="1" Flags="#x0011" SyncMan="1">
+								<Entry Name="Output" Index="#x70b0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 13" Index="#x160c" InOut="1" Flags="#x0011" SyncMan="1">
+								<Entry Name="Output" Index="#x70c0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 14" Index="#x160d" InOut="1" Flags="#x0011" SyncMan="1">
+								<Entry Name="Output" Index="#x70d0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 15" Index="#x160e" InOut="1" Flags="#x0011" SyncMan="1">
+								<Entry Name="Output" Index="#x70e0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 16" Index="#x160f" InOut="1" Flags="#x0011" SyncMan="1">
+								<Entry Name="Output" Index="#x70f0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+						</EtherCAT>
+					</Box>
+					<Box BoxType="9099" Id="4">
+						<Name>Term 4 (EL9011)</Name>
+						<ImageId>1002</ImageId>
+						<EtherCAT CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23333050" InfoDataState="false" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL9011 End Terminal" Desc="EL9011" PortABoxInfo="#x01000003"/>
+					</Box>
+				</Box>
+				<EtherCAT DeviceDesc="Ethernet 3 (Intel(R) I210 Gigabit Network Connectio"/>
+			</Device>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
+		<OwnerA Name="TIPC^Control_Monitor^Control_Monitor Instance">
+			<OwnerB Name="TIID^Device 2 (EtherCAT)^Term 1 (EK1100)^Term 2 (EL1809)">
+				<Link VarA="PlcTask Inputs^Variables.bIsMotorMoving" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^Variables.bIsOmronHome" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^Variables.bIsRobotInPos" VarB="Channel 9^Input"/>
+				<Link VarA="PlcTask Inputs^Variables.bIs_In_Pos" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^Variables.bReadyForNext" VarB="Channel 3^Input"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 2 (EtherCAT)^Term 1 (EK1100)^Term 3 (EL2809)">
+				<Link VarA="PlcTask Outputs^Variables.bGoHomeOmron" VarB="Channel 6^Output"/>
+				<Link VarA="PlcTask Outputs^Variables.bM0" VarB="Channel 2^Output"/>
+				<Link VarA="PlcTask Outputs^Variables.bM1" VarB="Channel 3^Output"/>
+				<Link VarA="PlcTask Outputs^Variables.bM2" VarB="Channel 4^Output"/>
+				<Link VarA="PlcTask Outputs^Variables.bStartOperation" VarB="Channel 1^Output"/>
+				<Link VarA="PlcTask Outputs^Variables.bStopOperations" VarB="Channel 5^Output"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmProject>

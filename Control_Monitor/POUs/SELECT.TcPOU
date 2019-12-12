@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+  <POU Name="SELECT" Id="{2c252d9b-9f6c-4ddf-bdff-ac3441738cd9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM SELECT
+VAR_INPUT
+	iState AT %I*:	 INT := 0;
+END_VAR
+VAR
+	bSwitch: BOOL := FALSE;
+	WAIT1: TON;
+	WAIT2: TON;
+	WAIT3: TON;
+	WAIT4: TON;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+CASE iState OF
+
+0: (* IDLE *)	
+	Variables.bM0 := FALSE;
+	Variables.bM1 := FALSE;
+	Variables.bM2 := FALSE;
+	Variables.bStartOperation := FALSE;
+		
+1: (* Pressure side *)	
+	Variables.bM0 := FALSE;
+	Variables.bM1 := TRUE;
+	Variables.bM2 := FALSE;
+	Variables.bStartOperation := TRUE;
+	
+2: (* Suction side Top *)
+	Variables.bM0 := FALSE;
+	Variables.bM1 := FALSE;
+	Variables.bM2 := TRUE;
+	Variables.bStartOperation := TRUE;
+
+3: (* Suction side Mid *)
+	Variables.bM0 := TRUE;
+	Variables.bM1 := FALSE;
+	Variables.bM2 := TRUE;
+	Variables.bStartOperation := TRUE;
+
+4: (* Suction side Bottom *)
+	Variables.bM0 := FALSE;
+	Variables.bM1 := TRUE;
+	Variables.bM2 := TRUE;
+	Variables.bStartOperation := TRUE;
+
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

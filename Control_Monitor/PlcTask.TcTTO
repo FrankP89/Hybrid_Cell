@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+  <Task Name="PlcTask" Id="{76bc4a30-3c4e-4a30-b592-d84a2c0bfa27}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>10000</CycleTime>
+    <Priority>20</Priority>
+    <PouCall>
+      <Name>MAIN</Name>
+    </PouCall>
+    <PouCall>
+      <Name>Input_Mapping</Name>
+    </PouCall>
+    <PouCall>
+      <Name>Output_Mapping</Name>
+    </PouCall>
+    <PouCall>
+      <Name>Display</Name>
+    </PouCall>
+    <PouCall>
+      <Name>Blade_Control</Name>
+    </PouCall>
+    <PouCall>
+      <Name>SELECT</Name>
+    </PouCall>
+    <TaskFBGuid>{5692a911-d3de-485d-b38c-99beb06ce777}</TaskFBGuid>
+    <Fb_init>{fa6447d0-adea-4e66-8456-7ba5c7ae7708}</Fb_init>
+    <Fb_exit>{93f4182b-c88f-4c29-ab88-9c9bbbfaa2a2}</Fb_exit>
+    <CycleUpdate>{a205c9dd-865e-4e84-a85f-3bdbf4bdb160}</CycleUpdate>
+    <PostCycleUpdate>{115e8da2-f157-4f66-a5af-1691f022e9ee}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

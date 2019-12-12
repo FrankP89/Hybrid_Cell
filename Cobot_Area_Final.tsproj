@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.29">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{534C1D0D-EDD1-33FC-3528-68B3DA4642FE}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..255] OF BOOL</Name>
+			<BitSize>2048</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>256</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..6] OF INT</Name>
+			<BitSize>96</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C453940}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..3] OF INT</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>3</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..2] OF UINT</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>3</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C45394B}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..3] OF REAL</Name>
+			<BitSize>96</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>3</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{253B2CC1-6165-9969-47FC-89F64CEC1263}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..6] OF REAL</Name>
+			<BitSize>192</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000300000100}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..255] OF BYTE</Name>
+			<BitSize>2048</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>256</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<Project ProjectGUID="{BBECA413-8EA4-47FC-BE90-90F91F614C52}" TargetNetId="192.168.1.100.1.1" Target64Bit="true" ShowHideConfigurations="#x106">
+		<System>
+			<Licenses>
+				<Target>
+					<ManualSelect Instances="1">{87DBEEFC-A548-4B37-9797-C9521D3A43A2}</ManualSelect>
+					<ManualSelect>{BDCC0070-42D5-49AE-ABF1-1D4434813D60}</ManualSelect>
+					<ManualSelect>{1601B55A-B68B-4C5B-9A42-31E9CA63F286}</ManualSelect>
+					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
+					<ManualSelect>{796D380F-D49E-4C0C-A05F-500052FAC883}</ManualSelect>
+				</Target>
+			</Licenses>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+				<Task Id="4" Priority="1" CycleTime="10000" AmsPort="301" AmsNetId="192.168.140.106.1.1">
+					<Name>Task 4</Name>
+					<Vars VarGrpType="1" InsertType="1">
+						<Name>Inputs</Name>
+					</Vars>
+					<Vars VarGrpType="2" InsertType="1">
+						<Name>Outputs</Name>
+					</Vars>
+					<Image Id="2" AddrType="1" ImageType="1">
+						<Name>Task 4-Image</Name>
+					</Image>
+				</Task>
+			</Tasks>
+			<Routes>
+				<Route Name="artc-se-nb6.scei.shared-svc.local" Addr="artc-se-nb6" NetId="192.168.1.30.1.1" TransType="1"/>
+			</Routes>
+		</System>
+		<Plc>
+			<Project GUID="{58128D99-DEAF-494A-98DA-D36376C4A27B}" Name="Cobot_Control" PrjFilePath="Cobot_Control\Cobot_Control.plcproj" TmcFilePath="Cobot_Control\Cobot_Control.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" ShareTmcDesc="true" KeepUnrestoredLinks="2" AutoReloadTmc="true" TmcPath="Cobot_Control\Cobot_Control.tmc">
+					<Name>Cobot_Control Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>E4000_IO.bRUN_IN0</Name>
+							<Comment>
+								<![CDATA[ Digital INPUTS]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bDIR_OUT_IN1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bCOIN_IN2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bPULSE_IN3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bWARNING_IN4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bERR_IN5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bMT_CNB_IN0</Name>
+							<Comment>
+								<![CDATA[ Digital INPUTS]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bSAFE1B_IN1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bSAFE2B_IN2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bAUTO_IN3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bPWON_IN4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.nMOTOR_I_CH0</Name>
+							<Comment>
+								<![CDATA[ Variables for ECCEA40 
+ Analog INPUTS]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.nLOAD_CH1</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.nSPEED_V_CH2</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.mb_Input_Coils</Name>
+							<Comment>
+								<![CDATA[/////////////////////////////////////////////////////////////////////]]>
+							</Comment>
+							<Type GUID="{534C1D0D-EDD1-33FC-3528-68B3DA4642FE}">ARRAY [0..255] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.bStartStop</Name>
+							<Comment>
+								<![CDATA[/////////////////////////////////////////////////////////////////////]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrURAngles</Name>
+							<Comment>
+								<![CDATA[/////////////////////////// UR Robot ///////////////////////////////
+////////////////	 Raw UR Robot Information  ////////////////////////]]>
+							</Comment>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrURAnglesVelocity</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrURAnglesCurrent</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrURAnglesTemp</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrURJointMode</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrTCPCartData</Name>
+							<Type GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C453940}">ARRAY [1..3] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrTCPRotData</Name>
+							<Type GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C453940}">ARRAY [1..3] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrURRobotStatus</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1268}">ARRAY [1..6] OF INT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.nFANUC_STATE</Name>
+							<Comment>
+								<![CDATA[////////////////////////////////////////////////////////////////////////
+/////////////////////////// FANUC Robot /////////////////////////////
+////////////////	 Raw FANUC Robot Information  ///////////////////]]>
+							</Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_1</Name>
+							<Comment>
+								<![CDATA[ Starts at 3]]>
+							</Comment>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_2</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_3</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_4</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_5</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_6</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_7</Name>
+							<Comment>
+								<![CDATA[ Starts at 22]]>
+							</Comment>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_8</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_9</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_10</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_11</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_12</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_IN_13</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>E4000_IO.bSTART_OUT0</Name>
+							<Comment>
+								<![CDATA[//////////////////////////////////////////////////////////////////////////////////////////////////////////	]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bDIR_IN_OUT1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bUD_IN_OUT2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bCNT_IN_OUT3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.b500_OUT4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bRESET_OUT5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bSEL0_OUT6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bSEL1_OUT7</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.bEMG_INB_OUT0</Name>
+							<Comment>
+								<![CDATA[//////////////////////////////////////////////////////////////////////////////////////////////////////////]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>E4000_IO.nVR</Name>
+							<Comment>
+								<![CDATA[//////////////////////////////////////////////////////////////////////////////////////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfUR_TCPxyz</Name>
+							<Comment>
+								<![CDATA[//////////////////////////////////////////////////////////////////////	
+////////////////	 Transformed UR Robot Information  ///////////////////]]>
+							</Comment>
+							<Type GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C45394B}">ARRAY [1..3] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfUR_TCPuvw</Name>
+							<Type GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C45394B}">ARRAY [1..3] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfUR_Angles</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1263}">ARRAY [1..6] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfUR_AnglesVel</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1263}">ARRAY [1..6] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfUR_AnglesAmp</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1263}">ARRAY [1..6] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfUR_AnglesTemp</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1263}">ARRAY [1..6] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfUR_JntMode</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1263}">ARRAY [1..6] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfUR_Status</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1263}">ARRAY [1..6] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.nFANUC_REMOTE_START</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrFANUC_OUT_1</Name>
+							<Type GUID="{7F3999D6-1785-057D-88BC-3449B9362C0A}">ARRAY [0..2] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfFANUC_TCPxyz</Name>
+							<Comment>
+								<![CDATA[////////////////////////////////////////////////////////
+////////////////	 Transformed FANUC Robot Information  ///////////////////]]>
+							</Comment>
+							<Type GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C45394B}">ARRAY [1..3] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfFANUC_TCPuvw</Name>
+							<Type GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C45394B}">ARRAY [1..3] OF REAL</Type>
+						</Var>
+						<Var>
+							<Name>Variables.arrfFANUC_Angles</Name>
+							<Type GUID="{253B2CC1-6165-9969-47FC-89F64CEC1263}">ARRAY [1..6] OF REAL</Type>
+						</Var>
+					</Vars>
+					<UnrestoredVarLinks ImportTime="2019-08-29T19:11:21">
+						<OwnerA Name="InputDst" Prefix="TIPC^Cobot_Control^Cobot_Control Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (TC3 EIP Scanner)^Box 1 (FANUC Robot R30iB)">
+								<Link VarA="Variables.arrJoint1[1]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[2]" Size="1" RestoreInfo="TypeMismatch" OldTypeA="BOOL" OldGuidA="{18071995-0000-0000-0000-000000000030}" NewTypeA="INT" NewGuidA="{18071995-0000-0000-0000-000000000006}"/>
+								<Link VarA="Variables.arrJoint1[2]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[1]" Size="1" RestoreInfo="TypeMismatch" OldTypeA="BOOL" OldGuidA="{18071995-0000-0000-0000-000000000030}" NewTypeA="INT" NewGuidA="{18071995-0000-0000-0000-000000000006}"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2019-08-29T19:20:41">
+						<OwnerA Name="InputDst" Prefix="TIPC^Cobot_Control^Cobot_Control Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (TC3 EIP Scanner)^Box 1 (FANUC Robot R30iB)">
+								<Link VarA="Variables.arrFANUCdata" TypeA="ARRAY [0..255] OF BOOL" InOutA="0" GuidA="{534C1D0D-EDD1-33FC-3528-68B3DA4642FE}" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE" RestoreInfo="TypeMismatch" OldTypeA="ARRAY [0..255] OF BOOL" OldGuidA="{534C1D0D-EDD1-33FC-3528-68B3DA4642FE}" NewTypeA="ARRAY [0..255] OF BYTE" NewGuidA="{18071995-0000-0000-0000-000300000100}"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Io>
+			<Device DevType="133" AmsPort="28673" Id="1">
+				<Name>Device 1 (TC3 EIP Scanner)</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>Ethernet (TwinCAT-Intel PCI Ethernet Adapter (Gigab</DeviceDesc>
+						<DeviceName>\DEVICE\{17620DC7-32D1-4DAF-8895-127C028911E7}</DeviceName>
+						<DeviceData>00010545402a</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Image Id="1" AddrType="1" ImageType="3">
+					<Name>Image</Name>
+				</Image>
+				<Box BoxType="9134" Id="1">
+					<Name>Box 1 (FANUC Robot R30iB)</Name>
+					<Comment>
+						<![CDATA[<INFO>
+
+</INFO>
+<EDS>
+C:\TwinCAT\3.1\Config\Io\EtherNetIP\fanucrobot0204_r30ib.eds
+</EDS>
+]]>
+					</Comment>
+					<ImageId>263</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var>
+							<Name>State</Name>
+							<Comment>
+								<![CDATA[0x8000 = Remote Node has no connections
+0x4000 = Remote Node is not reachable
+0x2000 = TCP Client: initialization failed
+0x1000 = UDP Client: initialization failed
+0x0X00 = reserved
+0x0001 = 1st Connection disconnected
+0x0002 = 2nd Connection disconnected
+0x0004 = 3rd Connection disconnected
+   ...
+0x0080 = 8th Connection disconnected
+]]>
+							</Comment>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var>
+							<Name>Ctrl</Name>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<EthernetIp NewSlavePara="0100000000000000000000000000000000000000000000000000000000000000000000000c0000006c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f01a8c000000000000000000000800001001e000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" EdsFilePath="fanucrobot0204_r30ib.eds">
+						<MasterConnection Id="1" AssemblyPara="010000a0200000002000000000000000000000006500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000020000009700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000100000000000000020000000000000000000000000000000000000064000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" ConnectionType="-2147483587">
+							<Name>Connection 1 (Input/Output)</Name>
+							<ImageId>86</ImageId>
+							<Vars VarGrpType="1" InsertType="1">
+								<Name>Inputs</Name>
+								<Var>
+									<Name>noname0_arrBYTE</Name>
+									<Type GUID="{18071995-0000-0000-0000-000300000100}">ARRAY [0..255] OF BYTE</Type>
+									<BitOffs>16</BitOffs>
+								</Var>
+							</Vars>
+							<Vars VarGrpType="2" InsertType="1">
+								<Name>Outputs</Name>
+								<Var>
+									<Name>noname0_arrBYTE</Name>
+									<Type GUID="{18071995-0000-0000-0000-000300000100}">ARRAY [0..255] OF BYTE</Type>
+									<BitOffs>16</BitOffs>
+								</Var>
+							</Vars>
+						</MasterConnection>
+					</EthernetIp>
+				</Box>
+				<Ethernet DeviceDesc="Ethernet (TwinCAT-Intel PCI Ethernet Adapter (Gigabit))" SpecialTask="true" TaskPort="301"/>
+				<EtherNetIPMasterDev m_EthIpMasterDevPar="010000004465766963652031202854433320454950205363616e6e6572290000000000000c0000006c0000008918000003010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002010545402a6401a8c000ffffff0101a8c00000800001001e000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
+			</Device>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-0010-0304-2000-040310000403}" Id="#x02030010"/>
+		<OwnerA Name="TIPC^Cobot_Control^Cobot_Control Instance">
+			<OwnerB Name="TIID^Device 1 (TC3 EIP Scanner)^Box 1 (FANUC Robot R30iB)">
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_10[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[31]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_10[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[32]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_10[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[33]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_11[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[34]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_11[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[35]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_11[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[36]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_12[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[37]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_12[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[38]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_12[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[39]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_13[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[40]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_13[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[41]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_13[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[42]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_1[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[3]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_1[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[4]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_1[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[5]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_2[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[6]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_2[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[7]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_2[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[8]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_3[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[9]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_3[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[10]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_3[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[11]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_4[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[12]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_4[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[13]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_4[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[14]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_5[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[15]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_5[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[16]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_5[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[17]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_6[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[18]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_6[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[19]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_6[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[20]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_7[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[22]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_7[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[23]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_7[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[24]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_8[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[25]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_8[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[26]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_8[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[27]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_9[0]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[28]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_9[1]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[29]"/>
+				<Link VarA="PlcTask Inputs^Variables.arrFANUC_IN_9[2]" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[30]"/>
+				<Link VarA="PlcTask Inputs^Variables.nFANUC_STATE" VarB="Connection 1 (Input/Output)^Inputs^noname0_arrBYTE[0]"/>
+				<Link VarA="PlcTask Outputs^Variables.arrFANUC_OUT_1[0]" VarB="Connection 1 (Input/Output)^Outputs^noname0_arrBYTE[3]"/>
+				<Link VarA="PlcTask Outputs^Variables.arrFANUC_OUT_1[1]" VarB="Connection 1 (Input/Output)^Outputs^noname0_arrBYTE[4]"/>
+				<Link VarA="PlcTask Outputs^Variables.arrFANUC_OUT_1[2]" VarB="Connection 1 (Input/Output)^Outputs^noname0_arrBYTE[5]"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmProject>
